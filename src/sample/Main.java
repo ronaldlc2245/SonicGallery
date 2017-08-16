@@ -21,8 +21,8 @@ import javax.swing.text.LabelView;
 public class Main extends Application {
 
     // set dimensions for window
-    private static int width = 600;
-    private static int height = 600;
+    private static int width = 500;
+    private static int height = 500;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -33,14 +33,20 @@ public class Main extends Application {
         // Sonic Image
         ImageView sonicImg = new ImageView("https://vignette4.wikia.nocookie.net/" +
                 "characters/images/6/67/Sonic_sonicx.png/revision/latest?cb=20130511172510");
-        sonicImg.setFitWidth(width/3);
-        sonicImg.setFitHeight(height - 50);
+        sonicImg.setFitWidth((width/3) -10);
+        sonicImg.setFitHeight(height - 100);
 
         // Tails Image
         ImageView tailsImg = new ImageView("http://vignette2.wikia.nocookie.net/" +
                 "spongebobandfriendsadventures/images/6/6a/Tails.png/revision/latest?cb=20150407151156");
-        tailsImg.setFitWidth(width/3);
-        tailsImg.setFitHeight(height - 50);
+        tailsImg.setFitWidth((width/3)-10);
+        tailsImg.setFitHeight(height - 100);
+
+        // Knuckles Image
+        ImageView knucklesImg = new ImageView("https://static.comicvine.com/uploads/original/5/53636/" +
+                "1010133-advance3_knuckles.png");
+        knucklesImg.setFitWidth((width/3) - 10);
+        knucklesImg.setFitHeight(height - 100);
 
         Button sonicBtn = new Button("Sonic", sonicImg);
         sonicBtn.setContentDisplay(ContentDisplay.TOP);
@@ -48,11 +54,16 @@ public class Main extends Application {
         Button tailsBtn = new Button("Tails", tailsImg);
         tailsBtn.setContentDisplay(ContentDisplay.TOP);
 
+        Button knucklesBtn = new Button("Knuckles", knucklesImg);
+        knucklesBtn.setContentDisplay(ContentDisplay.TOP);
+
         //grid.setGridLinesVisible(true);
 
-        grid.getChildren().addAll(sonicBtn, tailsBtn);
+        grid.getChildren().addAll(sonicBtn, tailsBtn, knucklesBtn);
         GridPane.setConstraints(sonicBtn,0,0);
         GridPane.setConstraints(tailsBtn, 1,0);
+        GridPane.setConstraints(knucklesBtn,2,0);
+
         //GridPane.setConstraints(tailsBtn,,0);
 
 
