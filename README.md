@@ -1,3 +1,3 @@
 # SonicGallery
 
-Will contain different pictures of Sonic Characters
+Will contain information about three Sonic characters Sonic, tails, and Knuckles.
