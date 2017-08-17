@@ -9,10 +9,9 @@ import javafx.geometry.VPos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import javax.swing.text.LabelView;
@@ -24,12 +23,22 @@ public class Main extends Application {
     private static int width = 500;
     private static int height = 500;
 
+    private static void addBackground(GridPane grid1, String url) {
+        Image image = new Image(url);
+        grid1.setBackground(new Background(new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false,
+                        true, true))));
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         GridPane grid = new GridPane();
-
-        grid.setGridLinesVisible(true);
         grid.setHgap(10);
+        String url = "https://vignette1.wikia.nocookie.net/sonic/images/8/8b/" +
+                "Windy_Hill_Background_%28Sonic_Lost_World_Japanese_Website_2%29.jpg/revision/latest?cb=20160113161156";
+        addBackground(grid, url);
+
         // Sonic Image
         ImageView sonicImg = new ImageView("https://vignette4.wikia.nocookie.net/" +
                 "characters/images/6/67/Sonic_sonicx.png/revision/latest?cb=20130511172510");
