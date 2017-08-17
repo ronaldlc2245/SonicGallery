@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import javax.swing.text.LabelView;
@@ -68,12 +69,18 @@ public class Main extends Application {
 
         //grid.setGridLinesVisible(true);
 
-        grid.getChildren().addAll(sonicBtn, tailsBtn, knucklesBtn);
+        Label bottomText = new Label("Pick your favorite Sonic Character \nto learn more");
+        bottomText.setTextFill(Color.BLACK);
+        bottomText.setStyle("-fx-font: 24 arial;");
+
+        grid.getChildren().addAll(sonicBtn, tailsBtn, knucklesBtn,bottomText);
         GridPane.setConstraints(sonicBtn,0,0);
         GridPane.setConstraints(tailsBtn, 1,0);
         GridPane.setConstraints(knucklesBtn,2,0);
+        GridPane.setConstraints(bottomText,0,1,3,1,HPos.CENTER, VPos.CENTER);
 
         //GridPane.setConstraints(tailsBtn,,0);
+
 
 
 
